@@ -98,7 +98,6 @@ pub struct Recipe {
     perform_time: String,
     description: String,
     tags: Vec<Tag>,
-    #[serde(rename = "orgURL")]
     org_url: String,
     recipe_ingredient: Vec<RecipeIngredient>,
     recipe_instructions: Vec<RecipeInstruction>,
