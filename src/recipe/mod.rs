@@ -88,7 +88,6 @@ impl RecipeInstruction {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, TypedBuilder)]
-#[serde(rename_all = "camelCase")]
 pub struct Recipe {
     id: uuid::Uuid,
     name: String,
