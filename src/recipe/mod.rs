@@ -91,9 +91,6 @@ impl RecipeInstruction {
 #[serde(rename_all = "camelCase")]
 pub struct Recipe {
     id: uuid::Uuid,
-    user_id: uuid::Uuid,
-    household_id: uuid::Uuid,
-    group_id: uuid::Uuid,
     name: String,
     slug: String,
     image: String,
@@ -110,18 +107,6 @@ pub struct Recipe {
     recipe_instructions: Vec<RecipeInstruction>,
 }
 impl Recipe {
-    pub fn get_id(&self) -> &uuid::Uuid {
-        &self.id
-    }
-    pub fn get_user_id(&self) -> &uuid::Uuid {
-        &self.user_id
-    }
-    pub fn get_household_id(&self) -> &uuid::Uuid {
-        &self.household_id
-    }
-    pub fn get_group_id(&self) -> &uuid::Uuid {
-        &self.group_id
-    }
     pub fn get_name(&self) -> &str {
         &self.name
     }
