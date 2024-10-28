@@ -22,7 +22,6 @@ impl Tag {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, TypedBuilder)]
-#[serde(rename_all = "camelCase")]
 pub struct RecipeIngredient {
     quantity: f64,
     unit: Option<String>,
@@ -69,7 +68,6 @@ impl RecipeIngredient {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, TypedBuilder, Default)]
-#[serde(rename_all = "camelCase")]
 pub struct RecipeInstruction {
     id: uuid::Uuid,
     title: String,
