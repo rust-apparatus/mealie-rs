@@ -91,14 +91,14 @@ pub struct Recipe {
     name: String,
     slug: String,
     image: String,
-    recipe_yield: String,
-    total_time: String,
-    prep_time: String,
+    recipe_yield: Option<String>,
+    total_time: Option<String>,
+    prep_time: Option<String>,
     cook_time: Option<String>,
-    perform_time: String,
-    description: String,
+    perform_time: Option<String>,
+    description: Option<String>,
     tags: Vec<Tag>,
-    org_url: String,
+    org_url: Option<String>,
     recipe_ingredient: Vec<RecipeIngredient>,
     recipe_instructions: Vec<RecipeInstruction>,
 }
@@ -112,29 +112,29 @@ impl Recipe {
     pub fn get_image(&self) -> &str {
         &self.image
     }
-    pub fn get_recipe_yield(&self) -> &str {
-        &self.recipe_yield
+    pub fn get_recipe_yield(&self) -> Option<String> {
+        self.recipe_yield.clone()
     }
-    pub fn get_total_time(&self) -> &str {
-        &self.total_time
+    pub fn get_total_time(&self) -> Option<String> {
+        self.total_time.clone()
     }
-    pub fn get_prep_time(&self) -> &str {
-        &self.prep_time
+    pub fn get_prep_time(&self) -> Option<String> {
+        self.prep_time.clone()
     }
-    pub fn get_cook_time(&self) -> &Option<String> {
-        &self.cook_time
+    pub fn get_cook_time(&self) -> Option<String> {
+        self.cook_time.clone()
     }
-    pub fn get_perform_time(&self) -> &str {
-        &self.perform_time
+    pub fn get_perform_time(&self) -> Option<String> {
+        self.perform_time.clone()
     }
-    pub fn get_description(&self) -> &str {
-        &self.description
+    pub fn get_description(&self) -> Option<String> {
+        self.description.clone()
     }
     pub fn get_tags(&self) -> &Vec<Tag> {
         &self.tags
     }
-    pub fn get_org_url(&self) -> &str {
-        &self.org_url
+    pub fn get_org_url(&self) -> Option<String> {
+        self.org_url.clone()
     }
     pub fn get_recipe_ingredient(&self) -> &Vec<RecipeIngredient> {
         &self.recipe_ingredient
